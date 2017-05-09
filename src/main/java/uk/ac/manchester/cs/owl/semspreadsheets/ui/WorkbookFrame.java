@@ -186,6 +186,7 @@ public class WorkbookFrame extends JFrame {
 
 		JMenu sheetMenu = menuBar.add(new JMenu("Sheet"));
 		sheetMenu.setMnemonic(KeyEvent.VK_S);
+		sheetMenu.add(new AddSheetAction(workbookManager, this));
 		sheetMenu.add(new RemoveSheetAction(this));
 		sheetMenu.add(new RenameSheetAction(this));			
 				
@@ -197,11 +198,12 @@ public class WorkbookFrame extends JFrame {
 		helpMenu.add(new RegistrationAction(this));
 		helpMenu.add(new AboutBoxAction(this));
 
-		JMenu testMenu = menuBar.add(new JMenu("Link"));
-		testMenu.add(new AddLinkCellToCellAction(workbookManager, this));
-		testMenu.add(new AddLinkCellToTableAction(workbookManager, this));
-		testMenu.add(new DeleteLinkCellsAction(workbookManager, this));
-		testMenu.add(new DeleteAllLinks(workbookManager, this));
+		JMenu linkMenu = menuBar.add(new JMenu("Link"));
+		linkMenu.add(new AddLinkCellToCellAction(workbookManager, this));
+		linkMenu.add(new AddLinkCellToTableAction(workbookManager, this));
+		linkMenu.add(new DeleteLinkCellsAction(workbookManager, this));
+		linkMenu.add(new DeleteAllLinks(workbookManager, this));
+		linkMenu.add("Use \"ESC\" key  to cancel any linking process");
 
 		setJMenuBar(menuBar);
 	}

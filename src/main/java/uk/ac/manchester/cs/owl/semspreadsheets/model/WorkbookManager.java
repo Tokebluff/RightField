@@ -324,7 +324,7 @@ public class WorkbookManager {
             sheet = workbook.addSheet("LinkedCells");
 
             //set true to hide the spreadsheet
-            sheet.setVeryHidden(true);
+            sheet.setVeryHidden(false);
 
             sheet.addCellAt(0,0).setValue(linkedCellsSet.size() + "");
 
